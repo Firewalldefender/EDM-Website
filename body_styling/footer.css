@@ -1,7 +1,3 @@
-body {
-  background-color: red !important;
-}
-
 footer {
   /* background blue */
   background-color: rgba(18, 18, 20, 0.75);
@@ -21,13 +17,66 @@ footer {
   gap: 20px;
 }
 
-/* copyright-styling */
+/* copyright-styling mit Flexbox, damit der Kopfhörer perfekt neben dem Text steht */
 .copyright {
   color: #8e8e93;
   font-size: 0.95rem;
   font-weight: 500;
-  font-family: sans-serif;
+  font-family: sans-serif, Orbitron;
   letter-spacing: 0.05px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Abstand zwischen Kopfhörer und Text */
+}
+
+/* --- MINI KOPFHÖRER STYLING --- */
+.headphones-mini {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  animation: footerBounce 2s ease-in-out infinite alternate;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Der Bügel */
+.headband-mini {
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #3b82f6; /* Neon-Blau */
+  border-bottom-color: transparent; /* Öffnung zeigt direkt nach unten */
+  border-radius: 50%;
+}
+
+/* Die Ohrmuscheln */
+.earpad-mini {
+  position: absolute;
+  bottom: 4px;
+  width: 8px;
+  height: 14px;
+  background: #3b82f6;
+  border-radius: 4px;
+  box-shadow: 0 0 10px #3b82f6;
+}
+.earpad-mini.left {
+  left: 0;
+}
+.earpad-mini.right {
+  right: 0;
+}
+
+/* --- MINIMALISTISCHE ANIMATION --- */
+@keyframes footerBounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-4px); /* Sanftes, dezentes Wippen */
+  }
 }
 
 /* display-flex */
@@ -60,13 +109,25 @@ footer {
   transition: transform 0.25s ease-out;
 }
 
+/* extra rule for impressum, start left */
+.footer-links a:last-child::after {
+  transform-origin: bottom left;
+}
+
 .footer-links a:hover {
   color: #3b82f6;
 }
 
-.footer-links a:hover::after {
+/* Wenn man über Programm (erster Link) fährt, zieht es sich nach links zurück */
+.footer-links a:first-child:hover::after {
   transform: scaleX(1);
-  transform-origin: bottom-left;
+  transform-origin: bottom right;
+}
+
+/* Wenn man über Impressum (letzter Link) fährt, zieht es sich nach rechts zurück */
+.footer-links a:last-child:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 /* responsive optimization for smaller screens */
@@ -75,7 +136,10 @@ footer {
     flex-direction: column; /* formatting elements below each other */
     text-align: center;
   }
-
+  .copyright {
+    flex-direction: column; /* Kopfhörer über dem Text im Mobile-Modus */
+    gap: 8px;
+  }
   .footer-links {
     justify-content: center; /* centering links */
   }

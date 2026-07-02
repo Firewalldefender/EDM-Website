@@ -1,4 +1,82 @@
+body {
+  background-color: red !important;
+}
+
 footer {
+  /* background blue */
+  background-color: rgba(18, 18, 20, 0.75);
+  backdrop-filter: blur(10px); /* blur-effect */
+  padding: 30px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* design-container */
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* presses copyright to the left, links to the right */
+  align-items: center;
+  max-width: 1200px; /* limit for bigger screens */
+  margin: 0 auto; /* centering container*/
+  flex-wrap: wrap; /* responsive design for different devices */
+  gap: 20px;
+}
+
+/* copyright-styling */
+.copyright {
+  color: #8e8e93;
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-family: sans-serif;
+  letter-spacing: 0.05px;
+}
+
+/* display-flex */
+.footer-links {
+  display: flex;
+  gap: 25px; /* space-between */
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-family: sans-serif;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+/* EDM_hover_effect: fine line below link */
+.footer-links a::after {
+  content: "";
+  position: absolute;
   width: 100%;
-  text-align: center;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #3b82f6; /* neon-blue */
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.footer-links a:hover {
+  color: #3b82f6;
+}
+
+.footer-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom-left;
+}
+
+/* responsive optimization for smaller screens */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column; /* formatting elements below each other */
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center; /* centering links */
+  }
 }

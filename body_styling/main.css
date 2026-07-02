@@ -1,0 +1,41 @@
+.EDM_styles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3vw;
+  margin: 2vw;
+  color: #f4f4f5;
+}
+
+.EDM_styles div {
+  width: 400px;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  border-left: 4px solid #00f0ff;
+  border-top: 4px solid #00f0ff;
+  border-bottom: 4px solid #ff007f;
+  border-right: 4px solid #ff007f;
+  border-radius: 5px;
+  background: rgba(26, 26, 30, 0.5);
+  box-shadow: 0 4px 20px #ff007f;
+}
+
+.EDM_styles div img {
+  max-width: 190px;
+  max-height: 190px;
+  margin-right: 10px;
+}
+
+.EDM_styles div div {
+  width: 180px;
+  height: 50px;
+  border: 0px;
+  background: none;
+  box-shadow: none;
+}
+
+.EDM_styles div h2 {
+  text-decoration: underline;
+}

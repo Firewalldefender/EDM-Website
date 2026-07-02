@@ -1,0 +1,145 @@
+/* ==========================================================================
+   1. HEADER CORE (DESKTOP & BASE)
+   ========================================================================== */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  background-color: var(--bg-nav);
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Der Header als Ganzes bleibt über dem restlichen Website-Content */
+  border-bottom: 2px solid var(--cp-yellow);
+  box-shadow: var(--glow-yellow);
+}
+
+/* Versteckt die Kontroll-Checkbox im Hintergrund */
+.nav-toggle-input {
+  display: none;
+}
+
+/* 2. LOGO ALS SCHALTER (WICHTIG FÜR DEN VORDERGRUND) */
+.header-logo {
+  cursor: pointer;
+  user-select: none;
+  /* Das ist die Rettung: Das Logo liegt auf Ebene 1020, also HÖHER als das Menü */
+  position: relative;
+  z-index: 1020;
+}
+
+.header-logo h1 {
+  font-family: "Orbitron", sans-serif;
+  color: var(--cp-magenta);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow:
+    0 0 5px #fff,
+    var(--glow-yellow);
+  margin: 0;
+  transition: transform 0.5s ease;
+}
+
+.header-logo h1 span {
+  color: var(--cp-yellow);
+  text-shadow:
+    0 0 4px #fff,
+    var(--glow-yellow);
+}
+
+.header-logo:hover h1 {
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   3. NAVIGATION (AUSKLAPP-STREIFEN FÜR DESKTOP)
+   ========================================================================== */
+.main-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0; /* Startet auf dem PC mit Breite 0 */
+  background-color: var(--bg-card);
+  border-bottom: 3px solid var(--cp-yellow);
+  box-shadow: 0 4px 20px var(--cp-magenta);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: width 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 1010; /* Das Menü liegt auf Ebene 1010 (unter dem Logo!) */
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.main-nav a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+}
+
+.main-nav a:hover {
+  color: var(--cp-magenta);
+  text-shadow:
+    0 0 4px #fff,
+    var(--glow-magenta);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   4. DESKTOP INTERAKTIONS-LOGIK
+   ========================================================================== */
+.nav-toggle-input:checked ~ .main-nav {
+  width: 100%;
+}
+
+.nav-toggle-input:checked ~ .main-nav ul {
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE DESIGN (MOBILE: MENÜ KLAPPT NACH UNTEN AUS)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 15px 20px;
+    position: relative;
+  }
+
+  /* Schaltet das Menü auf dem Handy auf "Top-to-Bottom" um */
+  .main-nav {
+    width: 100%;
+    height: 0; /* Startet geschlossen mit Höhe 0 */
+    top: 100%; /* Setzt sich exakt UNTER die Kante des Headers */
+    left: 0;
+    transition: height 0.4s ease-in-out;
+    border-bottom: none;
+  }
+
+  /* Wenn geklickt: Fährt nach unten aus, das Logo oben bleibt komplett frei sichtbar! */
+  .nav-toggle-input:checked ~ .main-nav {
+    width: 100%;
+    height: 280px; /* Fährt 280px weit nach unten aus */
+    border-bottom: 3px solid var(--cp-yellow);
+    box-shadow: 0 8px 2;
+  }
+}

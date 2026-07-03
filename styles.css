@@ -3,6 +3,7 @@
 @import url("./body_styling/header.css");
 @import url("./body_styling/main.css");
 @import url("./body_styling/footer.css");
+@import url("./body_styling/starting_button.css");
 
 * {
   font-family: "Orbitron", sans-serif;

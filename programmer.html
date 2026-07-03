@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Das Team | EDM</title>
+  </head>
+  <body>
+    <header></header>
+
+    <main class="impressum-container">
+      <h1>Das EDM-Web-Team</h1>
+
+      <section class="impressum-section">
+        <h2>Wer wir sind</h2>
+        <p>Die wilden Kerle</p>
+        <ul
+          style="list-style: none; padding: 0; color: #a1a1aa; line-height: 2"
+        >
+          <li>
+            ⚡ <strong style="color: #ffffff">Eric</strong> – Das
+            <strong>E</strong> in EDM
+          </li>
+          <li>
+            🔊 <strong style="color: #ffffff">Daniel</strong> – Das
+            <strong>D</strong> in EDM
+          </li>
+          <li>
+            🎹 <strong style="color: #ffffff">Marlin</strong> – Das
+            <strong>M</strong> in EDM
+          </li>
+        </ul>
+      </section>
+</ul>
+        
+       <div style="text-align: center; margin-top: 30px;">
+          <img src="meloetta.png" alt="Meloetta" class="dancing-meloetta">
+        </div>
+
+        <style>
+          .dancing-meloetta {
+            max-width: 677px;
+            height: auto;
+            border-radius: 8px;
+            /* Startet die Animation: 1.2 Sekunden pro Takt, unendlich oft */
+            animation: dance 1.2s steps(1) infinite;
+          }
+
+          @keyframes dance {
+            0%, 100% {
+              transform: scaleX(1); /* Normal */
+            }
+            50% {
+              transform: scaleX(-1); /* Horizontal gespiegelt */
+            }
+          }
+        </style>
+      </section>
+
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="index.html" class="back-btn">&larr; Zurück zur Startseite</a>
+      </div>
+  </body>
+</html>

@@ -6,14 +6,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  /* margin-left: 1rem;
+  margin-right: 1rem; */
   background-color: var(--bg-nav);
   position: sticky;
   top: 0;
   z-index: 1000; /* Der Header als Ganzes bleibt über dem restlichen Website-Content */
-  border-bottom: 2px solid var(--cp-yellow);
-  box-shadow: var(--glow-yellow);
+  border-bottom: 2px solid var(--cp-magenta); /* Streifen */
+  box-shadow: var(--glow-cyan); /* Schatten unter Streifen */
 }
 
 /* Versteckt die Kontroll-Checkbox im Hintergrund */
@@ -32,21 +32,21 @@
 
 .header-logo h1 {
   font-family: "Orbitron", sans-serif;
-  color: var(--cp-magenta);
+  color: var(--cp-magenta); /* EDM-Farbe */
   text-transform: uppercase;
   letter-spacing: 3px;
   text-shadow:
-    0 0 5px #fff,
-    var(--glow-yellow);
+    0 0 9px #fff,
+    var(--glow-cyan); /* Schatten um EDM */
   margin: 0;
   transition: transform 0.5s ease;
 }
 
 .header-logo h1 span {
-  color: var(--cp-yellow);
+  color: var(--cp-cyan); /* Farbe vom Punkt */
   text-shadow:
-    0 0 4px #fff,
-    var(--glow-yellow);
+    0 0 10px #fff,
+    var(--glow-cyan); /* Schatten vom Punkt */
 }
 
 .header-logo:hover h1 {
@@ -63,8 +63,8 @@
   height: 100%;
   width: 0; /* Startet auf dem PC mit Breite 0 */
   background-color: var(--bg-card);
-  border-bottom: 3px solid var(--cp-yellow);
-  box-shadow: 0 4px 20px var(--cp-magenta);
+  border-bottom: 3px solid var(--cp-magenta); /* Streifen, wenn man auf EDM klickt */
+  box-shadow: 0 4px 20px var(--cp-cyan); /* Schatten darunter */
 
   display: flex;
   align-items: center;
@@ -97,13 +97,19 @@
 }
 
 .main-nav a:hover {
-  color: var(--cp-magenta);
+  color: var(--cp-cyan); /* Farbe Hover Nav Bar */
   text-shadow:
     0 0 4px #fff,
-    var(--glow-magenta);
+    var(--glow-magenta); /* Schatten Hover Nav Bar */
   transform: translateY(-2px);
 }
 
+.main-nav a:active {
+  color: var(--cp-magenta);
+  text-shadow:
+    0 0 4px #fff,
+    var(--glow-cyan);
+}
 /* ==========================================================================
    4. DESKTOP INTERAKTIONS-LOGIK
    ========================================================================== */
@@ -138,8 +144,12 @@
   /* Wenn geklickt: Fährt nach unten aus, das Logo oben bleibt komplett frei sichtbar! */
   .nav-toggle-input:checked ~ .main-nav {
     width: 100%;
-    height: 280px; /* Fährt 280px weit nach unten aus */
-    border-bottom: 3px solid var(--cp-yellow);
+    height: 80px; /* Fährt 80px weit nach unten aus */
+    border-bottom: 3px solid var(--cp-magenta);
     box-shadow: 0 8px 2;
+  }
+
+  .main-nav ul li a {
+    font-size: 2vw;
   }
 }

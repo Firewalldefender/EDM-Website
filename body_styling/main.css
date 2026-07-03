@@ -42,3 +42,185 @@
     margin-top: 100px;
   }
 } */
+
+/* ==========================================================================
+   INDUSTRY IN NUMBERS (APPLE-CYBER-STYLE)
+   ========================================================================== */
+.stats-container {
+  padding: 100px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+}
+
+/* Apple-typische dezente, aber riesige Überschriften */
+.stats-header {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.stats-sub {
+  font-family: "Orbitron", sans-serif;
+  color: var(--cp-cyan);
+  text-shadow: var(--glow-cyan);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.stats-header h2 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: -1px;
+}
+
+/* Die massive Hero-Platte für die 15.1 Milliarden */
+.stats-hero-card {
+  background-color: var(--bg-card);
+  padding: 50px;
+  border-radius: 16px; /* Edle, weiche Apple-Rundung */
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.hero-number {
+  font-family: "Orbitron", sans-serif;
+  font-size: 5rem;
+  font-weight: 900;
+  color: var(--cp-yellow);
+  text-shadow:
+    0 0 10px #fff,
+    var(--glow-yellow);
+  line-height: 1;
+}
+
+.hero-text {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+/* Zweispaltiges CSS Grid für die Diagramme */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.stats-card {
+  background-color: var(--bg-card);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.stats-card h3 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.card-desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+/* ==========================================================================
+   DIE BALKENDIAGRAMME (PURE CSS)
+   ========================================================================== */
+.chart-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chart-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chart-label {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Die graue Röhre, in der der Balken liegt */
+.bar-container {
+  background-color: rgba(255, 255, 255, 0.05);
+  width: 100%;
+  height: 35px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Der eigentliche, animierte Balken */
+.bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 15px;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #000; /* Schwarze Schrift auf den hellen Neon-Balken knallt extrem gut */
+  transition: width 1s cubic-bezier(0.1, 1, 0.1, 1); /* Apple-Style sanftes Einfahren */
+}
+
+/* Farbvarianten für die Balken */
+.bar-magenta {
+  background-color: var(--cp-magenta);
+  box-shadow: var(--glow-magenta);
+}
+
+.bar-cyan {
+  background-color: var(--cp-cyan);
+  box-shadow: var(--glow-cyan);
+}
+
+.bar-dark {
+  background-color: var(--text-secondary);
+  color: #fff;
+}
+
+/* ==========================================================================
+   RESPONSIVE (HANDY & TABLET)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .stats-container {
+    padding: 60px 20px;
+  }
+
+  .stats-hero-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+    gap: 20px;
+  }
+
+  .hero-number {
+    font-size: 3.5rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr; /* Schaltet das Raster auf Smartphones untereinander */
+    gap: 20px;
+  }
+
+  .stats-card {
+    padding: 25px;
+  }
+}

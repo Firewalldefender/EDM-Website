@@ -153,3 +153,84 @@
     font-size: 2vw;
   }
 }
+
+/* ==========================================================================
+TIMELINE
+   ========================================================================== */
+
+/* Container für die Zentrierung auf der Seite */
+.timeline-container {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--bg-main);
+}
+
+.timeline {
+  width: 300px; /* Deine exakten 300px */
+  margin: auto;
+}
+
+.timeline p {
+  margin: 0;
+  padding: 30px; /* Deine originalen 30px Padding */
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+
+  /* HIER IST DIE RETTUNG: Wir legen den Stil und die Farbe global fest */
+  border-style: dashed;
+  border-color: var(--cp-magenta);
+  border-width: 0; /* Erst mal überall auf 0 setzen... */
+  border-top-width: 2px; /* ...und nur oben die 2px aktivieren */
+}
+
+/* DEIN ORIGINAL: Linkskurve für gerade Elemente */
+.timeline p:nth-child(even) {
+  border-left-width: 2px; /* Aktiviert die linke Linie */
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  margin-right: 30px;
+  padding-right: 0;
+}
+
+/* DEIN ORIGINAL: Rechtskurve für ungerade Elemente */
+.timeline p:nth-child(odd) {
+  border-right-width: 2px; /* Aktiviert die rechte Linie */
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  margin-left: 30px;
+  padding-left: 0;
+}
+
+/* DEIN ORIGINAL: Erster Schritt Fix */
+.timeline p:first-child {
+  border-top-width: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+/* DEIN ORIGINAL: Letzter Schritt Fix */
+.timeline p:last-child {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Schriften im Text */
+.timeline-year {
+  display: block;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--cp-yellow);
+  text-shadow:
+    0 0 5px #fff,
+    var(--glow-yellow);
+  margin-bottom: 5px;
+}
+
+.timeline p strong {
+  color: var(--cp-cyan);
+  display: block;
+  margin-bottom: 5px;
+}

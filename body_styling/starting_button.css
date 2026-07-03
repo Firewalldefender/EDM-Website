@@ -1,0 +1,87 @@
+:root {
+  --neon-cyan: #00f0ff; /* Elektrisches Cyan */
+  --neon-magenta: #ff007f; /* Pulsierendes Club-Pink */
+  --bg-main: #121214; /* Mattes Anthrazit-Grau */
+  --bg-nav: #09090b; /* Fast schwarzes Grau */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-main);
+  /* Nutzt die volle Höhe und Breite des Browserfensters */
+  width: 100vw;
+  height: 100vh;
+  /* Flexbox zentriert alles absolut in der Mitte */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Orbitron", Roboto, Helvetica, Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Der pulsierende Cyberpunk-Button */
+.rave-button {
+  margin-top: 50%;
+  margin-left: 5%;
+  margin-right: 5%;
+  position: relative;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1.5rem; /* Etwas größer für den großen Auftritt */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  padding: 20px 50px;
+  border: 2px solid var(--neon-cyan);
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.4s ease-in-out;
+  z-index: 1;
+  /* Permanenter Puls-Effekt */
+  animation: neonPulse 2s infinite alternate;
+}
+
+/* Hover-Effekt: Explosion aus Licht */
+.rave-button:hover {
+  color: var(--bg-nav);
+  background-color: var(--neon-cyan);
+  border-color: var(--neon-magenta);
+  box-shadow:
+    0 0 25px var(--neon-cyan),
+    0 0 60px var(--neon-magenta);
+  text-shadow: none;
+  transform: scale(1.05); /* Schmeißt sich dem User minimal entgegen */
+}
+
+/* Klick-Effekt */
+.rave-button:active {
+  transform: scale(0.98);
+  background-color: var(--neon-magenta);
+  border-color: var(--neon-cyan);
+  box-shadow:
+    0 0 15px var(--neon-magenta),
+    0 0 30px var(--neon-cyan);
+}
+
+/* Puls-Animation */
+@keyframes neonPulse {
+  0% {
+    box-shadow:
+      0 0 8px rgba(0, 240, 255, 0.4),
+      inset 0 0 4px rgba(0, 240, 255, 0.2);
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    box-shadow:
+      0 0 22px rgba(255, 0, 127, 0.7),
+      inset 0 0 10px rgba(0, 240, 255, 0.4);
+    text-shadow: 0 0 10px var(--neon-cyan);
+    border-color: var(--neon-magenta);
+  }
+}

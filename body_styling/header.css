@@ -163,7 +163,6 @@ TIMELINE
   padding: 60px 20px;
   display: flex;
   justify-content: center;
-  background-color: var(--bg-main);
 }
 
 .timeline {

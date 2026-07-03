@@ -1,14 +1,6 @@
 /* ==========================================================================
-   1. GLOBAL STYLES & CORE LAYOUT
+   1. Impressum
    ========================================================================== */
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #0b0b0c; /* Dunkler EDM-Vibe-Hintergrund */
-  color: #e4e4e7;
-  font-family: sans-serif;
-}
-
 .impressum-container {
   max-width: 900px;
   margin: 40px auto;
@@ -21,13 +13,13 @@ body {
   color: #ffffff;
   font-size: 2.5rem;
   margin-bottom: 30px;
-  text-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+  text-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
   text-align: center;
 }
 
 .impressum-section {
   margin-bottom: 25px;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(0, 240, 255, 0.03);
   padding: 25px;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -176,7 +168,7 @@ footer {
 }
 
 .copyright {
-  color: #8e8e93;
+  color: rgb(0, 240, 255);
   font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 0.05px;
@@ -200,7 +192,7 @@ footer {
   left: 3px;
   width: 30px;
   height: 30px;
-  border: 3px solid #3b82f6;
+  border: 3px solid rgb(0, 240, 255);
   border-bottom-color: transparent;
   border-radius: 50%;
 }
@@ -210,9 +202,9 @@ footer {
   bottom: 4px;
   width: 8px;
   height: 14px;
-  background: #3b82f6;
+  background: rgb(0, 240, 255);
   border-radius: 4px;
-  box-shadow: 0 0 10px #3b82f6;
+  box-shadow: 0 0 10px rgb(0, 240, 255);
 }
 .earpad-mini.left {
   left: 0;
@@ -252,7 +244,7 @@ footer {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: #3b82f6;
+  background-color: #ff007f;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -262,7 +254,7 @@ footer {
 }
 
 .footer-links a:hover {
-  color: #3b82f6;
+  color: rgb(0, 240, 255);
 }
 
 .footer-links a:first-child:hover::after {

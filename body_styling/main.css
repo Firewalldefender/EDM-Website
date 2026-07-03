@@ -14,7 +14,7 @@
   display: flex;
   flex-wrap: wrap;
   border-left: 4px solid #00f0ff;
-  border-top: 4px solid #00f0ff;
+  border-top: 4px solid rgb(0, 240, 255);
   border-bottom: 4px solid #ff007f;
   border-right: 4px solid #ff007f;
   border-radius: 5px;
@@ -34,8 +34,11 @@
   border: 0px;
   background: none;
   box-shadow: none;
+  font-size: 15px;
 }
-
-.EDM_styles div h2 {
-  text-decoration: underline;
-}
+/* 
+@media (max-width: 768px) {
+  section.EDM_styles {
+    margin-top: 100px;
+  }
+} */

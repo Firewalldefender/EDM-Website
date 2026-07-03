@@ -1,36 +1,190 @@
+/* ==========================================================================
+   1. GLOBAL STYLES & CORE LAYOUT
+   ========================================================================== */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0b0b0c; /* Dunkler EDM-Vibe-Hintergrund */
+  color: #e4e4e7;
+  font-family: sans-serif;
+}
+
+.impressum-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.impressum-container h1 {
+  font-family: "Orbitron", sans-serif;
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+  text-align: center;
+}
+
+.impressum-section {
+  margin-bottom: 25px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.impressum-section h2 {
+  color: #3b82f6; /* Neon-Blau */
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.impressum-section h3 {
+  color: #ffffff;
+  font-size: 1.05rem;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.impressum-section p {
+  color: #a1a1aa;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.impressum-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   2. RESPONSIVE GRIDS & SPECIAL ELEMENTS
+   ========================================================================== */
+/* Grid für Anbieter & Kontakt (nebeneinander auf Desktop) */
+.impressum-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+/* CEO Badge Styling */
+.ceo-badge {
+  color: #ffffff !important;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 10px 0 !important;
+}
+
+.ceo-title {
+  font-size: 0.85rem;
+  color: #3b82f6;
+  font-weight: normal;
+  display: inline-block;
+}
+
+.sub-text {
+  font-size: 0.85rem;
+  color: #71717a;
+}
+
+/* Team-Liste (Line-up) ohne Inline-Styles */
+.team-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #a1a1aa;
+  line-height: 2;
+}
+
+.team-list strong {
+  color: #ffffff;
+}
+
+.emoji {
+  margin-right: 8px;
+  display: inline-block;
+}
+
+/* Zentrierungs-Wrapper für Buttons & Medien */
+.meloetta-wrapper,
+.btn-wrapper {
+  text-align: center;
+  margin-top: 30px;
+  width: 100%;
+}
+
+/* Tanzende Meloetta */
+.dancing-meloetta {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  animation: dance 1.2s steps(1) infinite;
+}
+
+@keyframes dance {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(-1);
+  }
+}
+
+/* Zurück-Button */
+.back-btn {
+  display: inline-block;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 40px;
+  transition: all 0.2s ease;
+  padding: 10px 20px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 6px;
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.back-btn:hover {
+  color: #ffffff;
+  background: #3b82f6;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   3. FOOTER STYLING
+   ========================================================================== */
 footer {
-  /* background blue */
   background-color: rgba(18, 18, 20, 0.75);
-  backdrop-filter: blur(10px); /* blur-effect */
+  backdrop-filter: blur(10px);
   padding: 30px 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* design-container */
 .footer-container {
   display: flex;
-  justify-content: space-between; /* presses copyright to the left, links to the right */
+  justify-content: space-between;
   align-items: center;
-  max-width: 1200px; /* limit for bigger screens */
-  margin: 0 auto; /* centering container*/
-  flex-wrap: wrap; /* responsive design for different devices */
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
-/* copyright-styling mit Flexbox, damit der Kopfhörer perfekt neben dem Text steht */
 .copyright {
   color: #8e8e93;
   font-size: 0.95rem;
   font-weight: 500;
-  font-family: sans-serif, Orbitron;
   letter-spacing: 0.05px;
-  position: relative;
   display: flex;
   align-items: center;
-  gap: 12px; /* Abstand zwischen Kopfhörer und Text */
+  gap: 12px;
 }
 
-/* --- MINI KOPFHÖRER STYLING --- */
 .headphones-mini {
   position: relative;
   width: 36px;
@@ -40,19 +194,17 @@ footer {
   flex-shrink: 0;
 }
 
-/* Der Bügel */
 .headband-mini {
   position: absolute;
   top: 2px;
   left: 3px;
   width: 30px;
   height: 30px;
-  border: 3px solid #3b82f6; /* Dein Neon-Blau */
-  border-bottom-color: transparent; /* Öffnung zeigt direkt nach unten */
+  border: 3px solid #3b82f6;
+  border-bottom-color: transparent;
   border-radius: 50%;
 }
 
-/* Die Ohrmuscheln */
 .earpad-mini {
   position: absolute;
   bottom: 4px;
@@ -69,7 +221,6 @@ footer {
   right: 0;
 }
 
-/* --- ANIMATIONEN & NOTEN STYLING --- */
 @keyframes footerBounce {
   0% {
     transform: translateY(0);
@@ -79,23 +230,20 @@ footer {
   }
 }
 
-/* display-flex */
 .footer-links {
   display: flex;
-  gap: 25px; /* space-between */
+  gap: 25px;
 }
 
 .footer-links a {
   color: #ffffff;
   text-decoration: none;
   font-size: 0.95rem;
-  font-family: sans-serif;
   font-weight: 600;
   position: relative;
   transition: color 0.2s ease;
 }
 
-/* EDM_hover_effect: fine line below link */
 .footer-links a::after {
   content: "";
   position: absolute;
@@ -104,12 +252,11 @@ footer {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: #3b82f6; /* neon-blue */
+  background-color: #3b82f6;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
 
-/* extra rule for impressum, start left */
 .footer-links a:last-child::after {
   transform-origin: bottom left;
 }
@@ -118,99 +265,43 @@ footer {
   color: #3b82f6;
 }
 
-/* Wenn man über Programm (erster Link) fährt, zieht es sich nach links zurück */
 .footer-links a:first-child:hover::after {
   transform: scaleX(1);
   transform-origin: bottom right;
 }
 
-/* Wenn man über Impressum (letzter Link) fährt, zieht es sich nach rechts zurück */
 .footer-links a:last-child:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
-/* responsive optimization for smaller screens */
+/* ==========================================================================
+   4. MEDIA QUERIES (RESPONSIVE BREAKPOINTS)
+   ========================================================================== */
+/* Für Tablets und Handys (unter 768px) */
+@media (max-width: 768px) {
+  .impressum-grid {
+    grid-template-columns: 1fr; /* Schaltet das 2-Spalten-Layout in eine einzelne Spalte um */
+    gap: 15px;
+  }
+
+  .impressum-container h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Für kleinere Handys (unter 600px) */
 @media (max-width: 600px) {
   .footer-container {
-    flex-direction: column; /* formatting elements below each other */
+    flex-direction: column;
     text-align: center;
   }
+
   .footer-links {
-    justify-content: center; /* centering links */
+    justify-content: center;
   }
-}
 
-/* ==========================================================================
-   NEUES IMPRESSUM STYLING (Wird automatisch via styles.css geladen)
-   ========================================================================== */
-
-.impressum-container {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 0 20px;
-  color: #e4e4e7; /* Helles Grau */
-  font-family: sans-serif;
-}
-
-.impressum-container h1 {
-  font-family: "Orbitron", sans-serif;
-  color: #ffffff;
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  text-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
-}
-
-.impressum-section {
-  margin-bottom: 35px;
-  background: rgba(255, 255, 255, 0.03);
-  padding: 25px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.impressum-section h2 {
-  color: #3b82f6; /* Neon-Blau */
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  font-weight: 600;
-}
-
-.impressum-section h3 {
-  color: #ffffff;
-  font-size: 1rem;
-  margin-top: 15px;
-  margin-bottom: 5px;
-}
-
-.impressum-section p {
-  color: #a1a1aa;
-  line-height: 1.6;
-  margin-bottom: 8px;
-}
-
-.impressum-section p:last-child {
-  margin-bottom: 0;
-}
-
-/* Zurück-Button */
-.back-btn {
-  display: inline-block;
-  color: #3b82f6;
-  text-decoration: none;
-  font-weight: 600;
-  margin-top: 20px;
-  transition: all 0.2s ease;
-  padding: 10px 20px;
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  border-radius: 6px;
-  background: rgba(59, 130, 246, 0.05);
-}
-
-.back-btn:hover {
-  color: #ffffff;
-  background: #3b82f6;
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
-  border-color: #3b82f6;
-  transform: translateY(-2px);
+  .impressum-section {
+    padding: 15px;
+  }
 }

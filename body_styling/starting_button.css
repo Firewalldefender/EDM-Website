@@ -13,25 +13,18 @@
   padding: 0;
 }
 
-body {
+body.start {
   background-color: var(--bg-main);
-  /* Nutzt die volle Höhe und Breite des Browserfensters */
   width: 100vw;
   height: 100vh;
-  /* Flexbox zentriert alles absolut in der Mitte */
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Orbitron", Roboto, Helvetica, Arial, sans-serif;
-  overflow: hidden;
 }
 
 /* Der pulsierende Cyberpunk-Button */
 .rave-button {
-  margin-top: 50%;
-  margin-left: 5%;
-  margin-right: 5%;
-  position: relative;
   background: transparent;
   color: #ffffff;
   font-size: 1.5rem; /* Etwas größer für den großen Auftritt */
